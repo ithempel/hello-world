@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withMaven(maven: 'Default Maven', globalMavenSettingsConfig: 'Maven-Settings') {
+                withMaven(maven: 'Default Maven', globalMavenSettingsConfig: 'MavenSettings') {
                     script {
                         version = sh script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout',
                             returnStdout: true
